@@ -18,6 +18,20 @@ $('.total').text(sum);
 }
 
 
+   var savec=$(".savecal");
+   var savcalories = savec.click(function() {
+        var sum = 0.0;
+        $('#myTable > tbody> tr') .each(function() {
+        var qty = $(this).find('.qty').val();
+        var price = $(this).find('.price').val();
+        var amount = (qty*price)
+        sum+=amount;
+        $( this).find ('.amount').text(''+amount);
+        });
+        $('.total').text(sum);
+        console.log(sum);
+        });
+
 
 //-------for quantity increment and decrement----------
  var incrementQty;
